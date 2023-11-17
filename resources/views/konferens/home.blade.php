@@ -23,41 +23,56 @@
             <h1 class="ttl">Selamat Datang Konferens</h1>
             <div class="card shadow no-border">
                 <div class="">
-                    <div class="custom card-header">{{ __('Persentase Kehadiran') }}</div>
+                    <div class="custom card-header">
+                        <b>{{ __('Persentase Kehadiran') }}</b>
+                    </div>
                 </div>
-
+                
                 <div class="card-body">
                     <canvas id="chart2"></canvas>
                 </div>
-            </div>
+                <hr class="">
+                <div class="container mb-5 ml-3">
+                    <div>Total Kehadiran :</div>
+                        <div style="max-width: 80%">
+                            <div class="percentage-bar" style="background-color:#fff; border:solid 1px">
+                                <div class="progress-bar" style="width: {{ $percentageAll }}%; background-color: #cedcf1">
+                                {{ number_format($percentageAll, 2) }}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
             <div class="card shadow no-border">
-            <div class="card-body">
-            <div class="table-responsive-md">
-            <table class="table">
-                <thead>
-                    <tr>
-                        {{-- <th>Tanggal</th> --}}
-                        <th>Jemaat</th>
-                        <th>Yang ingin didoakan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($prayer as $p)
-                        <tr class="">
-                            <td>{{ $p->church->name }}</td>
-                            <td>{{ $p->req }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="2">Tidak Ada Data</td>
-                        </tr>
-                    @endforelse
-                    
-                </tbody>
-            </table>
+                <div class="card-body">
+                    <div class="table-responsive-md">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    {{-- <th>Tanggal</th> --}}
+                                    <th>Jemaat</th>
+                                    <th>Yang ingin didoakan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($prayer as $p)
+                                    <tr class="">
+                                        <td>{{ $p->church->name }}</td>
+                                        <td>{{ $p->req }}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="2">Tidak Ada Data</td>
+                                    </tr>
+                                @endforelse
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            </div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -77,6 +92,7 @@
         var backgroundColors =  [
             'rgba(255, 99, 132, 1)', 
             'rgba(54, 162, 235, 1)',
+            'rgba(54, 120, 100, 1)'
         ];
         var ctx = document.getElementById('chart2').getContext('2d');
         var myChart = new Chart(ctx, {

@@ -50,8 +50,10 @@ class HomeController extends Controller
     public function konferens()
     {
         $attendance = Attendance::get();
-        $totalHadir = Attendance::where('status', 'hadir')->count();
+        $totalHadir = Attendance::whereIn('status', ['hadir', 'terlambat'])->count();
         $totalSemua = Attendance::count();
+
+        $percentageAll = ($totalHadir/$totalSemua)*100;
 
         $results = DB::table('churches')
             ->join('uksses', 'churches.id', '=', 'uksses.church_id')
@@ -72,7 +74,7 @@ class HomeController extends Controller
         $prayer = Prayer::latest()->get();
         $church = Church::get();
         // dd($prayer);
-        return view('konferens.home', compact('prayer', 'results'));
+        return view('konferens.home', compact('prayer', 'results', 'percentageAll'));
     }
 
     public function staff()
