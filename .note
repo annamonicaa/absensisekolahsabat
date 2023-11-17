@@ -1,0 +1,13 @@
+17092023
+Tambah create meeting
+attendance -> input meeting-> select meeting_id
+index meeting (date)
+
+next -> create index attendance
+klik date dari index meeting -> masuk ke halaman absensi dengan meeting_id yang sesuai
+(kyknya blom dilanjutin wkwk lupa)
+
+05102023
+Tadi udah bikin route dan controller untuk attendance
+-> Tambahin attendance view (index.blade.php) untuk view attendance nya ato langsung edit aja
+

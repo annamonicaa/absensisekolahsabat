@@ -1,0 +1,161 @@
+/* #EBF5F7 
+#22B9DD */
+
+.bg-custom {
+    background-color: #185487 !important;
+}
+
+
+.custom2 {
+    color: #EAF1F5;
+    margin-right: 1em;
+}
+
+.btn-custom {
+    background-color: #125384 !important;
+    color: #fff;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    /* border-color: #88B6DA; */
+}
+
+i {
+    color: #125384;
+}
+
+th {
+    color: #125384;
+}
+
+.btnbtn {
+    border-radius: 20px !important;
+    background-color: #125384;
+    color: #ffffff;
+}
+
+.card {
+    background-color: #ffffff;
+    /* #ffffff90 */
+    box-shadow: 1em;
+}
+
+
+
+.btn-login {
+    background-color: #498FCB !important;
+    color: #fff;
+    padding: 0.5em 2.5em 0.5em 2.5em;
+    border-radius: 20px !important;
+}
+
+.no-border {
+    border: 0 !important;
+}
+
+.color-custom {
+    color: #88B6DA;
+}
+
+.navbar-brand {
+    color: #EAF1F5 !important;
+}
+
+.navbar-custom {
+    background-color: #88B6DA !important;
+}
+
+.hide {
+    visibility:hidden;
+}
+
+/* .card {
+    opacity: 0.7;
+    
+} */
+
+
+
+/* .nav-item a{
+    
+} */
+
+/* .nav-item:hover {
+    color: #afd4f5;
+} */
+
+
+/* side nav */
+.sideNav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #4F92D0;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  
+}
+
+.sideNav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #bed9dd;
+    display: block;
+    transition: 0.3s;
+}
+
+.sideNav a:hover {
+    color: #3c979f;
+}
+
+.sideNav .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+@media screen and (max-height: 450px) {
+    .sideNav {padding-top: 15px;}
+    .sideNav a {font-size: 18px;}
+}
+
+/* untuk judul di home */
+.ttl {
+    color: #125384;
+}
+
+/* progres bar */
+
+.percentage-bar {
+    width: 100%;
+    background-color: #3577aa;
+    text-align: center;
+    padding: 10px;
+    /* height: 1em; */
+    border-radius: 20px;
+    border-style: none;
+}
+
+.progress-bar {
+    height: 1em;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.percent {
+    border-style: none;
+    width: 100%;
+}
