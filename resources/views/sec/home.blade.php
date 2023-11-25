@@ -65,7 +65,7 @@
                                 
                             </tbody>
                         </table>
-                        <p><a class="button" href="{{ route('prayer.create') }}">Tambah</a></p>
+                        <p><a class="btn btn-custom" href="{{ route('prayer.create') }}">Tambah</a></p>
                 </div>
             </div>
         </div>
