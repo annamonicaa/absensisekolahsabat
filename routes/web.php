@@ -33,6 +33,10 @@ Route::resource('/prayer', 'PrayerController');
 Route::resource('/attendance', 'AttendanceController');
 Route::get('/attendance/show/{ukss_id}/{meetingId}', 'AttendanceController@show')->name('attendance.show');
 Route::get('/attendance/show/{meetingId}', 'AttendanceController@showSec')->name('attendance.showSec');
+
+Route::get('/attendance/sec/{meetingId}/edit', 'AttendanceController@editSec')->name('attendance.editSec');
+Route::put('/attendance/sec/{meetingId}/update', 'AttendanceController@updateSec')->name('attendance.updateSec');
+
 Route::get('/attendance/show/{ukss_id}/{meetingId}/edit', 'AttendanceController@edit')->name('attendance.edit');
 Route::put('/attendance/show/{ukss_id}/{meetingId}/update', 'AttendanceController@update')->name('attendance.update');
 Route::delete('/attendance/show/{ukss_id}/{meetingId}/delete', 'AttendanceController@destroy')->name('attendance.destroy');

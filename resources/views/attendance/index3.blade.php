@@ -52,7 +52,7 @@
                         
                     </table>
                     </div>
-                    {{-- <a class="btn" href="{{ route('attendance.edit', $a->meeting_id) }}"><i class="fas fa-edit"></i></a> --}}
+                    <a class="btn" href="{{ route('attendance.editSec', $a->meeting_id) }}"><i class="fas fa-edit"></i></a>
                     
                     {{-- <form method="POST" action="{{ route('attendance.destroy', ['meetingId' => $meetingId, 'ukssId' => $ukssId]) }}" style="display: inline;">
                         @csrf

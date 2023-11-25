@@ -190,6 +190,67 @@ class AttendanceController extends Controller
         return view('attendance.edit', compact('attendanceRecords', 'ukss_id', 'meetingId' ,'attendance', 'ukssmem', 'member', 'meeting', 'triwulan'));
     }
 
+    public function editSec($meetingId)
+    {
+        $meetingIdConvert = intval($meetingId);
+        $user = Auth::user();
+        $ukssIdConvert = intval($user->ukss_id);
+        
+        $attendance = Attendance::where('meeting_id', $meetingIdConvert)->where('ukss_id', $ukssIdConvert)->first();
+        
+        $meeting = Meeting::all();
+        $ukssmem = Ukssmem::where('ukss_id', $user->ukss_id)->get();
+        // dd($ukssmem);
+        $member = Member::all();
+        $triwulan = Triwulan::all();
+        $attendanceRecords = Attendance::where('meeting_id', $attendance->meeting_id)->get();
+        // $attendance = Attendance::get();
+        // $records = DB::table('ukssmems')->join('attendances', 'ukssmems.id', '=', 'attendances.ukssmem_id')->get();
+        
+
+        return view('attendance.editSec', compact('attendanceRecords', 'meetingId' ,'attendance', 'ukssmem', 'member', 'meeting', 'triwulan'));
+    }
+
+    public function updateSec(Request $request, $meetingId)
+    {
+        $user = Auth::user();
+        $meetingIdConvert = intval($meetingId);
+        $ukssIdConvert = intval($user->ukss_id);
+        // $ukss_id = $ukssIdConvert;
+        $attendance = Attendance::where('meeting_id', $meetingIdConvert)->where('ukss_id', $ukssIdConvert)->get();
+        // dd($attendance);
+        
+
+        foreach ($request->attendance as $attendanceData) {
+            
+            // Fetch the correct attendance record based on meeting_id and ukssmem_id
+            $attendanceData['meeting_id'] = $request->input('meeting_id');
+            $attendanceData['ukss_id'] = $user->ukss_id;
+            // dd($attendanceData);
+            $existingAttendance = Attendance::where('meeting_id', $attendanceData['meeting_id'])
+                ->where('ukssmem_id', $attendanceData['ukssmem_id'])
+                ->first();
+
+            // dd($existingAttendance);
+            // Check if the record exists before updating
+            if ($existingAttendance) {
+                // Update the record with the new data
+                $existingAttendance->update($attendanceData);
+            } else {
+                // Handle the case where the record doesn't exist (optional)
+            }
+        }
+                // dd($request);
+                if (Auth::user()->role_id == 4) {
+                    $redirectPath = '/staff/attendance';
+                } else {
+                    $redirectPath = '/attendance';
+                }
+                
+        
+                return redirect($redirectPath);
+    }
+
     /**
      * Update the specified resource in storage.
      */
@@ -199,17 +260,22 @@ class AttendanceController extends Controller
         $ukssIdConvert = intval($ukss_id);
         
         $attendance = Attendance::where('meeting_id', $meetingIdConvert)->where('ukss_id', $ukssIdConvert)->first();
-        
+        // dd($attendance);
         foreach ($request->attendance as $attendanceData) {
             // Add meeting_id and ukss_id to each $attendanceData
             $attendanceData['meeting_id'] = $request->input('meeting_id');
             $attendanceData['ukss_id'] = $ukss_id;
-        
+            $existingAttendance = Attendance::where('meeting_id', $attendanceData['meeting_id'])
+            ->where('ukssmem_id', $attendanceData['ukssmem_id'])
+            ->first();
+
             // Create a new instance of the Attendance model
-            $attendanceModel = new Attendance();
-        
-            // Update the record in the Attendance table where 'id' matches $attendanceData['id']
-            $attendanceModel->where('meeting_id', $attendanceData['meeting_id'])->update($attendanceData);
+            if ($existingAttendance) {
+                // Update the record with the new data
+                $existingAttendance->update($attendanceData);
+            } else {
+                // Handle the case where the record doesn't exist (optional)
+            }
         }
                 // dd($request);
                 if (Auth::user()->role_id == 4) {

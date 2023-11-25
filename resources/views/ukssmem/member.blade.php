@@ -49,7 +49,7 @@
                         </tbody>
                     </table>
                     </div>
-                    <p><a class="button" href="{{ route('ukssmem.create', ['ukss_id' => $ukss->id]) }}">Tambah</a></p>
+                    <p><a class="btn btn-custom" href="{{ route('ukssmem.create', ['ukss_id' => $ukss->id]) }}">Tambah</a></p>
 
                 </div>
             </div>
