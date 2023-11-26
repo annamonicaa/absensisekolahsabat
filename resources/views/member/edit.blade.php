@@ -22,7 +22,7 @@
         <div class="col-md-8">
             <div class="card shadow no-border">
                 <div class="">
-                    <div class="custom card-header">{{ __('Daftar Anggota') }}</div>
+                    <div class="custom card-header">{{ __('Edit Anggota') }}</div>
                 </div>
 
                 <div class="card-body">

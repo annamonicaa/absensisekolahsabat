@@ -31,7 +31,7 @@
                             @csrf
                             @method('PUT')
                             
-                            <div class="input-group mb-3">
+                            {{-- <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">UKSS</span>
                                 <select class="form-control form-select" name="ukss_id" aria-describedby="basic-addon1">
                                     <option value="" disable selected hidden></option>
@@ -43,7 +43,8 @@
                                     @endif
                                     @endforeach                            
                             </select>
-                            </div>
+                            </div> --}}
+                            <input type="hidden" name="ukss_id" value="{{ $user->ukss_id }}">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Username</span>
                                 <input name="username" value="{{ $user->username }}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">

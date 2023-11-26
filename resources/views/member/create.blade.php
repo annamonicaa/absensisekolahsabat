@@ -22,7 +22,7 @@
         <div class="col-md-8">
             <div class="card shadow no-border">
                 <div class="">
-                    <div class="custom card-header">{{ __('Daftar Anggota') }}</div>
+                    <div class="custom card-header">{{ __('Tambah Anggota') }}</div>
                 </div>
 
                 <div class="card-body">
@@ -49,12 +49,18 @@
                           </div>
                           <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Jenis Kelamin</span>
-                            <input name="gender" type="text" class="form-control" aria-label="Jenis Kelamin" aria-describedby="basic-addon1">
+                            {{-- <input name="gender" type="text" class="form-control" aria-label="Jenis Kelamin" aria-describedby="basic-addon1"> --}}
+                            <select class="form-select" name="gender">
+                              <option value="" disable selected hidden></option>
+                              <option value="Perempuan">Perempuan</option>
+                              <option value="Laki-laki">Laki-laki</option>
+                            </select>
                         </div>
-                            <input type="text" name="church_id" value="{{ Auth::user()->church_id }}" hidden><br>
-                        </div>
-                        <button class="btn" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
-                        <button class="btn" type="reset">Reset</button>
+
+                        <input type="text" name="church_id" value="{{ Auth::user()->church_id }}" hidden>
+                        
+                        <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
+                        <button class="btn btn-custom" type="reset">Reset</button>
                         </form>
                 </div>
             </div>

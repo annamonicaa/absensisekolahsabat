@@ -19,7 +19,7 @@ class UserController extends Controller
     {    
         $test = Auth::user();
         if (Auth::user()->role_id == 2) {
-            $user = User::orderBy('username')->get();
+            $user = User::orderBy('username')->where('ukss_id', $ukss_id = 0)->get();
         } else {
             $user = User::orderBy('username')->where('church_id', $test->church_id)->get();
         }

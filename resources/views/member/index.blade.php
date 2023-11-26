@@ -64,7 +64,7 @@
                             </tbody>
                         </table>
                     </div>
-                        <p><a class="button" href="{{ route('member.create') }}">Tambah</a></p>
+                        <p><a class="btn btn-custom" href="{{ route('member.create') }}">Tambah</a></p>
                 </div>
             </div>
         </div>

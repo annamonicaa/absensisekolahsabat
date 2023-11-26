@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Church;
 use App\Models\Ukss;
+use App\Models\User;
 use App\Models\Ukssmem;
 use App\Models\Member;
 use App\Models\Prayer;

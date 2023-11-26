@@ -61,7 +61,8 @@ class UkssController extends Controller
     public function edit(Ukss $ukss)
     {
         $church = Church::get();
-        return view('ukss.edit', compact('ukss', 'church'));
+        $triwulan = Triwulan::get();
+        return view('ukss.edit', compact('ukss', 'church', 'triwulan'));
     }
 
     public function update(Request $request, Ukss $ukss)

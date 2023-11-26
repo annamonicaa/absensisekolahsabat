@@ -22,37 +22,56 @@
         <div class="col-md-8">
             <div class="card shadow no-border">
                 <div class="">
-                    <div class="custom card-header">{{ __('Permintaan Doa') }}</div>
+                    <div class="custom card-header">{{ __('Edit UKSS') }}</div>
                 </div>
 
                 <div class="card-body">
 
-                    <h2>Buat Permintaan Doa</h2>
+                    <h2>Edit UKSS</h2>
                     <form action="{{ route('ukss.update', $ukss->id) }}" method="POST">
                         @csrf
                         @method('PUT')
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">Jemaat</span>
+                          <select class="form-control form-select" name="church_id">
+                              <option value="" disable selected hidden></option>
+                              @foreach ($church as $c)
+                                  <option value="{{ $c->id }}"{{ $ukss->church_id == $c->id ? 'selected' : '' }}>
+                                      {{ $c->name }}
+                                  </option>
+                              @endforeach
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">Nama UKSS</span>
+                          <input name="name" type="text" value="{{ $ukss->name }}" class="form-control" aria-label="Nama UKSS" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">Pemimpin Diskusi</span>
+                          <input name="leader" value="{{ $ukss->leader }}" type="text" class="form-control" aria-label="Pemimpin Diskusi" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Sekretaris</span>
+                        <input name="secretary" value="{{ $ukss->secretary }}" type="text" class="form-control" aria-label="Sekretaris" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Lokasi</span>
+                      <input name="loc" type="text" value="{{ $ukss->loc }}" class="form-control" aria-label="Lokasi" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Triwulan</span>
+                      <select class="form-control form-select" name="triwulan_id" aria-describedby="basic-addon1">
+                          <option value="" disable selected hidden>Choose</option>
+                          @foreach ($triwulan as $t)
+                              <option value="{{ $t->id }}"{{ $ukss->triwulan_id == $t->id ? 'selected' : '' }}>
+                                  {{ $t->triwulan }} | {{ $t->year }}
+                              </option>
+                          @endforeach
+                      </select>
+                  </div>
 
-                        <label>Jemaat</label>
-                        <select name="church_id">
-                            <option value="">Choose</option>
-                            @foreach ($church as $c)
-                                <option value="{{ $c->id }}"{{ $ukss->church_id == $c->id ? 'selected' : '' }}>
-                                    {{ $c->name }}
-                                </option>
-                                
-                            @endforeach
-                        </select><br>
-
-                        <label>Nama UKSS </label>
-                        <input name="name" value="{{ $ukss->name }}"><br>
-                        <label>Pemimpin Diskusi</label>
-                        <input name="leader" value="{{ $ukss->leader }}"><br>
-                        <label>Sekretaris</label>
-                        <input name="secretary" value="{{ $ukss->secretary }}"><br>
-                        <label>Lokasi</label>
-                        <input name="loc" value="{{ $ukss->loc }}"><br>
-                        <button onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
-                        <button type="reset">Reset</button>
+                        <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
+                        <button class="btn btn-custom" type="reset">Reset</button>
                     </form>
                 </div>
             </div>
