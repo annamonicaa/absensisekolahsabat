@@ -106,7 +106,8 @@ class UserController extends Controller
     {
         $user = User::whereId($user->id)->update([
             'username' => $request->input('username'),
-            'password' => Hash::make($request->input('password')),
+            // 'password' => Hash::make($request->input('password')),
+            'password' => $request->input('password') ? Hash::make($request->input('password')) : User::whereId($user->id)->value('password'),
             'role_id' => $request->input('role_id'),
             'church_id' => $request->input('church_id'),
             'ukss_id' => $request->input('ukss_id')

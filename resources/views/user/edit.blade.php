@@ -55,7 +55,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Password</span>
-                                <input name="password" value="{{ $user->password }}" type="text" class="form-control" aria-label="Password" aria-describedby="basic-addon1">
+                                <input name="password" value="" type="text" class="form-control" aria-label="Password" aria-describedby="basic-addon1">
                             </div>
                             {{-- <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Role</span>

@@ -45,6 +45,9 @@
                 </div>
                 <br><br>
             <div class="card shadow no-border">
+                <div class="custom card-header">
+                    <b>{{ __('Yang ingin didoakan') }}</b>
+                </div>
                 <div class="card-body">
                     <div class="table-responsive-md">
                         <table class="table">
