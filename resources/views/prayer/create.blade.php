@@ -22,12 +22,11 @@
         <div class="col-md-8">
             <div class="card shadow no-border">
                 <div class="">
-                    <div class="custom card-header">{{ __('Permintaan Doa') }}</div>
+                    <div class="custom card-header">{{ __('Tambah Doa') }}</div>
                 </div>
 
                 <div class="card-body">
 
-                    <h2>Buat Permintaan Doa</h2>
                     <div class="form-create mt-4 mb-4 w-75 m-auto">
                         <form action="{{ route('prayer.store') }}" method="POST">
                             @csrf

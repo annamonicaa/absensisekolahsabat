@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LiveSearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +83,7 @@ Route::middleware(['auth', 'user-access:2'])->group(function() {
     Route::resource('/church', 'ChurchController');
 
 });
+
+//livesearch
+Route::get('/live', [LiveSearchController::class, 'index']);
+Route::get('/action', [LiveSearchController::class, 'action'])->name('action');

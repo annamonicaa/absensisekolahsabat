@@ -118,6 +118,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
+    public function password() {
+        return view('changePassword');
+    } 
+
+    public function changePassword() {
+        
+    }
+
     public function destroy(User $user)
     {
         $user = User::find($user->id);

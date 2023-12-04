@@ -40,8 +40,8 @@ class UkssmemController extends Controller
         $user = Auth::user();
         $ukss_id = $request->input('ukss_id');
         $ukss = Ukss::find($ukss_id);
-        $existingMemberIds = UkssMem::where('church_id', $user->church_id)->pluck('member_id')->all();
-
+        $existingMemberIds = Ukssmem::where('church_id', $user->church_id)->pluck('member_id')->all();
+        // dd($existingMemberIds);
         $member = Member::where('church_id', $user->church_id)
             ->whereNotIn('id', $existingMemberIds)
             ->get();
