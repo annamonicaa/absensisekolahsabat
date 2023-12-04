@@ -20,9 +20,10 @@
   <div class="row justify-content-center">
     @foreach ($percentage as $p)  
     <div class="col-sm-3">
+      <div class="btnbtn rounded border-light-subtle">
         <a href="{{ route('jemaatukss', $p['church_id']) }}">
         <div class="card-body p-4">
-            <h5>Laporan Kehadiran dari {{ $p['church_name'] }}</h5>
+            <h5 style="color: aliceblue">Laporan Kehadiran dari {{ $p['church_name'] }}</h5>
             <hr>
             <div class="percentage-bar">
                 <div class="progress-bar" style="width: {{ $p['attendancePercentage'] }}%;">
@@ -31,8 +32,12 @@
             </div>
         </div>
         </a>
+      </div>
+      <br>
     </div>
+    
     @endforeach
+    
 
 
 

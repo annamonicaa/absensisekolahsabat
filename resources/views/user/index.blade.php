@@ -45,7 +45,7 @@
                                 
                                 <tr class="">
                                     <td>{{ $u->username }}</td>
-                                    {{-- <td>{{ $u->ukss->name }}</td> --}}
+                                    <td>{{ $u->name }}</td>
                                     <td>{{ $u->role->role }}</td>
                                     <td><a class="btn" href="{{ route('user.edit', $u->id) }}"><i class="fas fa-edit"></i></a></td>
                                     <td>

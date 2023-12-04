@@ -49,7 +49,7 @@
                         </div>
 
                         <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
-                        <button class="btn" type="reset">Reset</button>
+                        <button class="btn btn-custom" type="reset">Reset</button>
                     </form>
                 </div>
             </div>

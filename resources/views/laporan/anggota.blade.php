@@ -21,7 +21,7 @@
     <div class="col-md-8">
         <div class="card shadow no-border">
             <div class="">
-                <div class="custom card-header">Laporan Kehadiran {{ $attendance->first()->ukssmem->member->name }}</div>
+                <div class="custom card-header">Laporan Kehadiran <b> {{ $attendance->first()->ukssmem->member->name }} </b></div>
             </div>
 
             <div class="card-body">

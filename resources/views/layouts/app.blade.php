@@ -204,7 +204,7 @@
           @else
           @if (Auth::user()->role_id == 3)
           <li class="nav-item">  
-            <a href="sec/ukssmem/show" class="nav-link">
+            <a href="/sec/ukssmem/show" class="nav-link">
                 <i class="nav-icon fa-solid fa-list"></i>
                 <p>Anggota UKSS</p>
             </a>
@@ -214,7 +214,7 @@
 
           @if (Auth::user()->role_id == 4)
           <li class="nav-item">  
-            <a href="meeting/create" class="nav-link">
+            <a href="/meeting/create" class="nav-link">
                 <i class="nav-icon fa-solid fa-list"></i>
                 <p>Pertemuan</p>
             </a>

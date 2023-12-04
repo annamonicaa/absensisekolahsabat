@@ -19,14 +19,16 @@
 
                     <form action="{{ route('triwulan.store') }}" method="POST">
                         @csrf
-
-                        <label>Triwulan</label>
-                        <input name="triwulan">
-                        <label>Tahun</label>
-                        <input name="year"><br>
-
-                        <button type="submit">Simpan</button>
-                        <button type="reset">Reset</button>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Triwulan</span>
+                            <input name="triwulan" type="text" class="form-control" aria-label="Triwulan" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Tahun</span>
+                            <input name="year" type="text" class="form-control" aria-label="Tahun" aria-describedby="basic-addon1">
+                        </div>
+                       <button class="btn btn-custom" type="submit">Simpan</button>
+                        <button class="btn btn-custom" type="reset">Reset</button>
                     </form>
                         
 

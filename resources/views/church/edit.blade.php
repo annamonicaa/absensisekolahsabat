@@ -17,22 +17,7 @@
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->
 </div>
-<div class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1 class="m-0">Jemaat</h1>
-        </div><!-- /.col -->
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/konferens/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="/church">Jemaat</a></li>
-            <li class="breadcrumb-item active">Edit Jemaat</li>
-          </ol>
-        </div><!-- /.col -->
-      </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </div>
+
   <!-- /.content-header -->
 <div class="container">
     <div class="row justify-content-center">
@@ -65,7 +50,7 @@
                         </div>
 
                         <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
-                        <button class="btn" type="reset">Reset</button>
+                        <button class="btn btn-custom" type="reset">Reset</button>
                 
                     </form>
                 </div>

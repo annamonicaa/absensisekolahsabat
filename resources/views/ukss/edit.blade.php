@@ -33,7 +33,7 @@
                         @method('PUT')
                         <div class="input-group mb-3">
                           <span class="input-group-text" id="basic-addon1">Jemaat</span>
-                          <select class="form-control form-select" name="church_id">
+                          <select disabled class="form-control form-select" name="church_id">
                               <option value="" disable selected hidden></option>
                               @foreach ($church as $c)
                                   <option value="{{ $c->id }}"{{ $ukss->church_id == $c->id ? 'selected' : '' }}>

@@ -33,7 +33,7 @@ class TriwulanController extends Controller
             'triwulan' => $request->input('triwulan'),
             'year' => $request->input('year'),
         ]);
-        return redirect('/triwulan');
+        return redirect('/triwulan/create');
     }
 
     /**

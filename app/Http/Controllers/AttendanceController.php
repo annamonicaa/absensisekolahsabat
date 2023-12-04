@@ -27,7 +27,7 @@ class AttendanceController extends Controller
         $user = Auth::user();
         // $ukss = Ukss::find($ukss_id);
         $ukssmem = Ukssmem::get();
-        $meeting = Meeting::latest()->get();
+        $meeting = Meeting::get();
         $attendance = Attendance::where('ukss_id', $user->ukss_id)->selectRaw('MIN(id) as id, meeting_id')
                     ->groupBy('meeting_id')->get();
 
@@ -272,6 +272,9 @@ class AttendanceController extends Controller
             // Create a new instance of the Attendance model
             if ($existingAttendance) {
                 // Update the record with the new data
+                $attendanceData['ss'] = isset($attendanceData['ss']) ? 'Ya' : 'Tidak';
+                $attendanceData['egw_book'] = isset($attendanceData['egw_book']) ? 'Ya' : 'Tidak';
+
                 $existingAttendance->update($attendanceData);
             } else {
                 // Handle the case where the record doesn't exist (optional)
