@@ -35,9 +35,6 @@
                             <thead>
                                 <tr>
                                     <th>Nama</th>
-                                    <th>No. Telp</th>
-                                    <th>Jenis Kelamin</th>
-                                    <th>Alamat</th>
                                     <th colspan="2">Action</th>
                                 </tr>
                             </thead>
@@ -45,10 +42,11 @@
                                 @foreach ($member as $m)
                                 
                                 <tr class="">
-                                    <td>{{ $m->name }}</td>
-                                    <td>{{ $m->phone }}</td>
-                                    <td>{{ $m->gender }}</td>
-                                    <td>{{ $m->address }}</td>
+                                    <td>
+                                        <button type="button" class="btn hover-uline" data-bs-toggle="modal" data-bs-target="#modal{{ $m->id }}">
+                                            {{ $m->name }}
+                                        </button>
+                                    </td>
                                     <td><a class="btn" href="{{ route('member.edit', $m->id) }}"><i class="fas fa-edit"></i></a></td>
                                     <td>
                                         <form action="{{ route('member.destroy', $m->id) }}" method="POST">
@@ -70,4 +68,41 @@
         </div>
     </div>
 </div>
+@foreach ($member as $m)
+<div class="modal fade" id="modal{{ $m->id }}" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          {{-- <h1 class="modal-title fs-5" id="modalLabel">{{  }}</h1> --}}
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="h4 custom">Detail UKSS</div>
+          <table class="table">
+            <tr>
+                <th>Nama</th>
+                <td>{{ $m->name }}</td>
+            </tr>
+            <tr>
+                <th>No. Telp</th>
+                <td>{{ $m->phone }}</td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>{{ $m->gender }}</td>
+            </tr>
+            <tr>
+                <th>Alamat</th>
+                <td>{{ $m->address }}</td>
+            </tr>
+          </table>
+        </div>
+        {{-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> --}}
+      </div>
+    </div>
+  </div>
+@endforeach
 @endsection

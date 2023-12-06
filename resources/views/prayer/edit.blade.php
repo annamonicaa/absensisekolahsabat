@@ -38,6 +38,12 @@
                             <span class="input-group-text" id="basic-addon1">Permintaan Doa</span>
                             <input name="req" value="{{ $prayer->req }}" type="text" class="form-control" aria-label="Permintaan Doa" aria-describedby="basic-addon1">
                         </div>
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">Detail Doa</span>
+                          <textarea name="detail" class="form-control" rows="4" cols="50" aria-label="Detail Doa" aria-describedby="basic-addon1">{{ $prayer->detail }}</textarea>
+                      </div>
+                        <input type="hidden" name="church_id" value="{{ $prayer->church_id }}">
+                        <input type="hidden" name="church_id" value="{{ $prayer->user_id }}">
                         <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
                         <button class="btn btn-custom" type="reset">Reset</button>
                 

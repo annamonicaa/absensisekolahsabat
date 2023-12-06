@@ -215,7 +215,7 @@
           @if (Auth::user()->role_id == 4)
           <li class="nav-item">  
             <a href="/meeting/create" class="nav-link">
-                <i class="nav-icon fa-solid fa-list"></i>
+                <i class="nav-icon fa-solid fa-calendar-days"></i>
                 <p>Pertemuan</p>
             </a>
           </li>
@@ -226,7 +226,7 @@
           <li class="nav-item">  
             <a href="triwulan/create" class="nav-link">
                 <i class="nav-icon fa-solid fa-list"></i>
-                <p>Pertemuan</p>
+                <p>Triwulan</p>
             </a>
           </li>
               

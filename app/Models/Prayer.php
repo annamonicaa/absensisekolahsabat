@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prayer extends Model
 {
-    protected $fillable = ['date', 'req', 'church_id'];
+    protected $fillable = ['date', 'req', 'detail', 'church_id', 'user_id'];
     public function church () {
         return $this->belongsTo('App\Models\Church');
+    }
+    public function user () {
+        return $this->belongsTo('App\Models\User');
     }
 }

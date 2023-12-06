@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prayer;
+use App\Models\User;
 use App\Models\Church;
 use App\Http\Controllers\PrayerController;
 use App\Models\Attendance;

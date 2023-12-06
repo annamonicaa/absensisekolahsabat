@@ -36,7 +36,9 @@ class PrayerController extends Controller
             
             'date' => $request->input('date', Carbon::now()->toDateString()),
             'req' => $request->input('req'),
-            'church_id' => $request->input('church_id')
+            'detail' => $request->input('detail'),
+            'church_id' => $request->input('church_id'),
+            'user_id' => $request->input('user_id')
         ]);
 
         return redirect($redirectPath);
@@ -64,7 +66,10 @@ class PrayerController extends Controller
 
         $prayer = Prayer::whereId($prayer->id)->update([
             'req' => $request->input('req'),
-            'date' => $request->input('date')
+            'date' => $request->input('date'),
+            'detail' => $request->input('detail'),
+            'church_id' => $request->input('church_id'),
+            'user_id' => $request->input('church_id'),
         ]);
 
         return redirect($redirectPath);

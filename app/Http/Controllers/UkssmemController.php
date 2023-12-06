@@ -93,16 +93,18 @@ class UkssmemController extends Controller
 
         $ukss = Ukss::find($ukss_id);
         // $member = Ukssmem::where('church_id', auth()->user()->church_id)->get();
-        $member = Ukssmem::where('ukss_id', $ukss_id)->with('member')->get();
-        return view('ukssmem.member', compact('ukss', 'member', 'ukss_id'));
+        $ukssmem = Ukssmem::where('ukss_id', $ukss_id)->with('member')->get();
+        $member = Member::get();
+        return view('ukssmem.member', compact('ukss', 'member', 'ukss_id', 'ukssmem'));
     }
 
     public function showSec()
     {
         $user = Auth::user();
+        $member = Member::get();
         // $member = Ukssmem::where('church_id', auth()->user()->church_id)->get();
-        $member = Ukssmem::where('ukss_id', $user->ukss_id)->with('member')->get();
-        return view('ukssmem.showSec', compact('member'));
+        $ukssmem = Ukssmem::where('ukss_id', $user->ukss_id)->with('member')->get();
+        return view('ukssmem.showSec', compact('member', 'ukssmem'));
     }
 
     /**

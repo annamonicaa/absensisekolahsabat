@@ -40,6 +40,12 @@
                                 <span class="input-group-text" id="basic-addon1">Permintaan Doa</span>
                                 <input name="req" type="text" class="form-control" aria-label="Permintaan Doa" aria-describedby="basic-addon1">
                             </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Detail Doa</span>
+                                <textarea name="detail" class="form-control" rows="4" cols="50" aria-label="Detail Doa" aria-describedby="basic-addon1"></textarea>
+
+                            </div>
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <input type="text" name="church_id" value="{{ Auth::user()->church_id }}" hidden><br>
                             <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit" >Simpan</button>
                             

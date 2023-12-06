@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <p><a class="btn btn-custom" href="{{ route('attendance.create') }}">Tambah</a></p>
                     @foreach ($attendance as $a)
-                        <a class="btn" href="{{ route('attendance.showSec', $a->meeting_id) }}">{{ $a->meeting->date }}</a>
+                        <a class="btn hover-uline" href="{{ route('attendance.showSec', $a->meeting_id) }}">{{ $a->meeting->date }}</a>
                     @endforeach
                 </div>
             </div>

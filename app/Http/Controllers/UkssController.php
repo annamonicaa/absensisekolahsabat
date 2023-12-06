@@ -7,6 +7,7 @@ use App\Models\Ukss;
 use App\Models\Triwulan;
 use App\Models\Ukssmem;
 use App\Models\User;
+use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,12 +16,15 @@ class UkssController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $user = Auth::user();
-        $ukss = Ukss::orderBy('name')->where('church_id', $user->church_id)->get();
-        return view('ukss.index', compact('ukss'));
-    }
+        public function index()
+        {
+            $user = Auth::user();
+            $ukss = Ukss::orderBy('name')->where('church_id', $user->church_id)->get();
+            //ukssmem yang memiliki id ukss yang dipanggil
+            $ukssmem = Ukssmem::get();
+            $member = Member::get();
+            return view('ukss.index', compact('ukss', 'member'));
+        }
 
     /**
      * Show the form for creating a new resource.
