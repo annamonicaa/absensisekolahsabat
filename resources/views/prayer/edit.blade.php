@@ -43,7 +43,7 @@
                           <textarea name="detail" class="form-control" rows="4" cols="50" aria-label="Detail Doa" aria-describedby="basic-addon1">{{ $prayer->detail }}</textarea>
                       </div>
                         <input type="hidden" name="church_id" value="{{ $prayer->church_id }}">
-                        <input type="hidden" name="church_id" value="{{ $prayer->user_id }}">
+                        <input type="hidden" name="user_id" value="{{ $prayer->user_id }}">
                         <button class="btn btn-custom" onclick="return confirm('Apakah anda yakin untuk menyimpan data?')" type="submit">Simpan</button>
                         <button class="btn btn-custom" type="reset">Reset</button>
                 

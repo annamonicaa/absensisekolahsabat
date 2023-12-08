@@ -62,7 +62,7 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="checkbox" class="form-check-input" value="Ya" name="attendance[{{ $loop->index }}][ss]"
+                                        <input type="checkbox" class="form-check-input ml-1" value="Ya" name="attendance[{{ $loop->index }}][ss]"
                                         {{ $attendanceRecords->where('ukssmem_id', $um->id)->first()->ss == 'Ya' ? 'checked' : '' }}>
                                     
                                         {{-- <input type="checkbox" class="form-check-input" value="Ya" name="attendance[{{ $loop->index }}][ss]"
@@ -70,7 +70,7 @@
                                             {{ $um->ss == 'Ya' ? 'checked' : '' }}> --}}
                                     </td>
                                     <td>
-                                        <input type="checkbox" class="form-check-input" value="Ya" name="attendance[{{ $loop->index }}][egw_book]"
+                                        <input type="checkbox" class="form-check-input ml-1" value="Ya" name="attendance[{{ $loop->index }}][egw_book]"
                                         {{ $attendanceRecords->where('ukssmem_id', $um->id)->first()->egw_book == 'Ya' ? 'checked' : '' }}>
                                         {{-- <input type="checkbox" class="form-check-input" value="Ya" name="attendance[{{ $loop->index }}][egw_book]"
                                             {{ $um->egw_book == 'Ya' ? 'checked' : '' }}> --}}

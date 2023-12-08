@@ -30,8 +30,8 @@
                             <tr>
                                 <th>Nama</th>
                                 <th>Status</th>
-                                <th>Belajar SS</th>
-                                <th>Membaca Roh Nubuat</th>
+                                <th>SS</th>
+                                <th>RN</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -46,11 +46,11 @@
                 </div> --}}
 
                 <div class="card-body">
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex flex-wrap justify-content-center">
                         @foreach ($ukss as $u)
                         @if ($u->id != 0)
                         <div>
-                            <div class="m-2"><a class="p-2 mx-auto px-5 btn btn-custom" href="{{ route('ukssmem.show', $u->id) }}">{{ $u->name }}</a></div>
+                            <div class="m-2"><a class="pt-4 pb-4 mx-auto px-5 btn btn-custom" href="{{ route('ukssmem.show', $u->id) }}">{{ $u->name }}</a></div>
                         </div> 
                         @endif
                             

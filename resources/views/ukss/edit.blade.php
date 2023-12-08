@@ -31,17 +31,7 @@
                     <form action="{{ route('ukss.update', $ukss->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <div class="input-group mb-3">
-                          <span class="input-group-text" id="basic-addon1">Jemaat</span>
-                          <select disabled class="form-control form-select" name="church_id">
-                              <option value="" disable selected hidden></option>
-                              @foreach ($church as $c)
-                                  <option value="{{ $c->id }}"{{ $ukss->church_id == $c->id ? 'selected' : '' }}>
-                                      {{ $c->name }}
-                                  </option>
-                              @endforeach
-                          </select>
-                        </div>
+                        <input type="hidden" name="church_id" value="{{ $ukss->church_id }}">
                         <div class="input-group mb-3">
                           <span class="input-group-text" id="basic-addon1">Nama UKSS</span>
                           <input name="name" type="text" value="{{ $ukss->name }}" class="form-control" aria-label="Nama UKSS" aria-describedby="basic-addon1">

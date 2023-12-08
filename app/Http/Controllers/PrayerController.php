@@ -69,7 +69,7 @@ class PrayerController extends Controller
             'date' => $request->input('date'),
             'detail' => $request->input('detail'),
             'church_id' => $request->input('church_id'),
-            'user_id' => $request->input('church_id'),
+            'user_id' => $request->input('user_id'),
         ]);
 
         return redirect($redirectPath);

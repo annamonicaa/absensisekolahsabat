@@ -73,6 +73,7 @@ class UkssController extends Controller
     {
         $ukss = Ukss::whereId($ukss->id)->update([
             'church_id' => $request->input('church_id'),
+            'name' => $request->input('name'),
             'leader' => $request->input('leader'),
             'secretary' => $request->input('secretary'),
             'loc' => $request->input('loc')

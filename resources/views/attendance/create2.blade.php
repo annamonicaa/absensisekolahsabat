@@ -47,8 +47,8 @@
                                 <tr>
                                     <th>Nama</th>
                                     <th>Status</th>
-                                    <th>Belajar SS</th>
-                                    <th>Membaca Roh Nubuat</th>
+                                    <th>SS</th>
+                                    <th>RN</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,10 +64,10 @@
                                         </select>
                                     </td>
                                     <td>
-                                        <input type="checkbox" class="form-check-input" value="Ya" name="attendance[{{ $loop->index }}][ss]">
+                                        <input type="checkbox" class="form-check-input ml-1" value="Ya" name="attendance[{{ $loop->index }}][ss]">
                                     </td>
                                     <td>
-                                        <input type="checkbox" class="form-check-input" value="Ya" name="attendance[{{ $loop->index }}][egw_book]">
+                                        <input type="checkbox" class="form-check-input ml-1" value="Ya" name="attendance[{{ $loop->index }}][egw_book]">
                                     </td>
                                 </tr>
                                 @endforeach
